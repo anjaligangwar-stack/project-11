@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creamy Truffle Pasta • Recipe</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf6f1;--black:#111;--orange:#ff4d12;--border:#ece6df;--muted:#6b6b6b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--black);font-family:'Inter',sans-serif}
+.serif{font-family:'Instrument Serif',serif}
+
+/* NAV */
+nav{max-width:1280px;margin:auto;display:flex;justify-content:space-between;padding:22px 24px;align-items:center}
+nav .logo{font-size:22px;letter-spacing:-0.5px;font-weight:600}
+nav .actions{display:flex;gap:10px}
+.btn{padding:10px 18px;border-radius:100px;border:1px solid var(--border);background:#fff;font-size:13px;font-weight:500;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-1px)}
+.btn.dark{background:var(--black);color:#fff;border-color:var(--black)}
+
+/* HERO - Your required Left Right */
+.hero{max-width:1280px;margin:20px auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:0;background:#fff;border-radius:28px;overflow:hidden;border:1px solid var(--border)}
+.hero-img{position:relative;background:#000}
+.hero-img img{width:100%;height:100%;object-fit:cover;min-height:680px;display:block}
+.hero-img .tag{position:absolute;top:20px;left:20px;background:#fff;padding:8px 14px;border-radius:100px;font-size:12px;font-weight:600}
+.hero-content{padding:42px 40px;display:flex;flex-direction:column}
+.kicker{color:var(--orange);font-size:12px;letter-spacing:1.5px;font-weight:600}
+.hero-content h1{font-size:64px;line-height:0.95;letter-spacing:-2px;margin:16px 0;font-weight:400}
+.hero-content h1 i{font-style:italic}
+.desc{color:var(--muted);line-height:1.6;margin-top:10px;font-size:15px}
+.meta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0}
+.meta-grid div{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:14px}
+.meta-grid label{font-size:10px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:4px}
+.meta-grid strong{font-size:15px}
+.author{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:24px;border-top:1px solid var(--border)}
+.author img{width:40px;height:40px;border-radius:50%}
+.author small{color:var(--muted);display:block}
+
+/* BODY */
+.main{max-width:1280px;margin:30px auto;display:grid;grid-template-columns: 0.9fr 1.1fr;gap:24px;padding:0 0 40px}
+.card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px}
+
+/* Ingredients */
+.card h3{font-size:22px;margin-bottom:18px}
+.serving-ctrl{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--border);padding:8px 12px;border-radius:100px;width:fit-content;margin-bottom:22px}
+.serving-ctrl button{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);background:#fff;cursor:pointer}
+.ing-list li{list-style:none;display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);align-items:center;cursor:pointer}
+.ing-list li:last-child{border:0}
+.ing-list input{accent-color:var(--black);width:18px;height:18px}
+.ing-list li.done{opacity:.4;text-decoration:line-through}
+.nutrition{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+.nutrition div{background:var(--bg);padding:12px;border-radius:12px;text-align:center}
+.nutrition strong{display:block;font-size:16px}
+.nutrition span{font-size:11px;color:var(--muted)}
+
+/* Steps */
+.step{position:relative;padding-left:56px;margin-bottom:32px}
+.step-num{position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);display:grid;place-items:center;font-size:13px;font-weight:600;background:#fff}
+.step.active .step-num{background:var(--black);color:#fff}
+.step h4{font-size:18px;margin-bottom:6px}
+.step p{color:var(--muted);line-height:1.6;font-size:14.5px}
+.step img{width:100%;border-radius:14px;margin-top:14px;border:1px solid var(--border)}
+.progress{height:3px;background:var(--border);border-radius:100px;margin-bottom:24px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--black);width:0%;transition:.4s}
+
+@media(max-width:900px){
+  .hero,.main{grid-template-columns:1fr}
+  .hero-content h1{font-size:48px}
+  .hero-img img{min-height:420px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo serif">SAVOUR.</div>
+  <div class="actions">
+    <button class="btn" onclick="window.print()">Print Recipe</button>
+    <button class="btn dark">Share</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1000" alt="Pasta">
+    <div class="tag">EDITOR'S CHOICE • FALL 2026</div>
+  </div>
+  <div class="hero-content">
+    <div class="kicker">PASTA • 30 MINUTES • VEG</div>
+    <h1 class="serif">Creamy Garlic <br><i>Truffle Pasta</i></h1>
+    <p class="desc">Restaurant-style pasta with parmesan, truffle oil and roasted garlic. Silky sauce that coats every strand. No cream overload, just pure technique.</p>
+    
+    <div class="meta-grid">
+      <div><label>PREP</label><strong>15 min</strong></div>
+      <div><label>COOK</label><strong>15 min</strong></div>
+      <div><label>DIFFICULTY</label><strong>Easy</strong></div>
+    </div>
+
+    <div class="author">
+      <img src="https://i.pravatar.cc/100?img=32">
+      <div><strong style="font-size:14px">By Anya Sharma</strong><small>Food Stylist & Recipe Developer</small></div>
+      <div style="margin-left:auto">★★★★★ <small>4.9 (212)</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="main">
+  <div class="card" id="leftCard">
+    <h3 class="serif">Ingredients</h3>
+    <div class="serving-ctrl">
+      <span style="font-size:13px;font-weight:600">SERVINGS</span>
+      <button onclick="updateServings(-1)">−</button>
+      <span id="servCount" style="font-weight:700;width:18px;text-align:center">2</span>
+      <button onclick="updateServings(1)">+</button>
+    </div>
+    <ul class="ing-list" id="ingList"></ul>
+    <div class="nutrition">
+      <div><strong>620</strong><span>KCAL</span></div>
+      <div><strong>22g</strong><span>PROTEIN</span></div>
+      <div><strong>48g</strong><span>CARBS</span></div>
+      <div><strong>31g</strong><span>FAT</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="progress"><i id="prog"></i></div>
+    <h3 class="serif" style="margin-bottom:20px">Method</h3>
+    <div id="steps"></div>
+  </div>
+</div>
+
+<script>
+const baseIng = [
+  {q:200,u:'g',n:'Spaghetti'},
+  {q:30,u:'g',n:'Unsalted butter'},
+  {q:6,u:'',n:'Garlic cloves, finely sliced'},
+  {q:100,u:'ml',n:'Heavy cream (cold)'},
+  {q:60,u:'g',n:'Parmigiano Reggiano'},
+  {q:1,u:'tsp',n:'White truffle oil'},
+  {q:1,u:'',n:'Lemon zest + black pepper'},
+];
+let serves=2;
+const ingList=document.getElementById('ingList');
+function renderIng(){
+  ingList.innerHTML='';
+  baseIng.forEach(it=>{
+    let qty = (it.q/2*serves);
+    let li=document.createElement('li');
+    li.innerHTML=`<input type="checkbox"><span><b>${qty} ${it.u}</b> ${it.n}</span>`;
+    li.onclick=(e)=>{if(e.target.tagName!=='INPUT'){li.querySelector('input').click()} li.classList.toggle('done',li.querySelector('input').checked); updateProgress()};
+    ingList.appendChild(li);
+  });
+}
+function updateServings(d){
+  if(serves+d<1)return;
+  serves+=d;
+  document.getElementById('servCount').textContent=serves;
+  renderIng();
+}
+renderIng();
+
+const stepsData=[
+  {t:'Cook pasta al dente',d:'Large pot, heavily salted water. Cook 1 min less than packet time. Reserve 1 cup pasta water. It is your sauce.',img:'https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600'},
+  {t:'Build the emulsion',d:'In pan, butter on medium, garlic till fragrant (not brown). Add 60ml pasta water, swirl. This starchy water is key to silky sauce.'},
+  {t:'Finish',d:'Add cream, drained pasta, toss. Off heat, add parmesan, truffle oil. Add pasta water spoon by spoon till glossy. Lemon zest, pepper.'},
+];
+const stepsEl=document.getElementById('steps');
+stepsData.forEach((s,i)=>{
+  let div=document.createElement('div');
+  div.className='step'+(i==0?' active':'');
+  div.innerHTML=`<div class="step-num">${i+1}</div><h4>${s.t}</h4><p>${s.d}</p>${s.img?`<img src="${s.img}">`:''}`;
+  div.onclick=()=>{document.querySelectorAll('.step').forEach(x=>x.classList.remove('active'));div.classList.add('active');updateProgress()};
+  stepsEl.appendChild(div);
+});
+
+function updateProgress(){
+  const total=document.querySelectorAll('#ingList li').length + stepsData.length;
+  const done=document.querySelectorAll('#ingList li.done').length + document.querySelectorAll('.step.active').length;
+  document.getElementById('prog').style.width = (done/total*100)+'%';
+}
+updateProgress();
+</script>
+</body>
+</html>
